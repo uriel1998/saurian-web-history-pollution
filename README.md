@@ -16,13 +16,13 @@ If you want to use your own list of URLs in a different location, the file locat
 
 Depends upon/uses (most of these are GNU coreutils):
 
-curl
-awk
-sed
-head & tail 
-grep 
-mktemp 
-wc 
-shuf 
+curl  
+awk  
+sed  
+head & tail   
+grep  
+mktemp   
+wc   
+shuf   
 
 Written in BASH, but may work okay with other shell variants. I haven't tested it.
