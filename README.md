@@ -1,5 +1,6 @@
-# saurian-web-history-pollution
-A script to pollute your web history a little bit to make ISP snooping a little more difficult.
+#Saurian Spider
+
+A BASH script to pollute your web history a little bit to make ISP snooping a little more difficult.
 
 In 2016, the FCC ruled that internet service providers had to [get your permission before selling your raw browsing data
 ](http://www.recode.net/2016/10/28/13442880/internet-providers-fcc-permission-share-web-browsing-data-opt-in).
