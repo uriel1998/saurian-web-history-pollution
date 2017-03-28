@@ -13,6 +13,8 @@ It maintains a list of URLs - creating one at $HOME/.config/saurianspider.conf i
 
 The URL list is seeded with the current events page at Wikipedia and the "Random" page on Wikipedia; that said, it doesn't ADD links from Wikipedia or Wikimedia, as that could get really obvious, really quickly.
 
+URL list is now limited to 10,000 lines, with extra searches to remove most social media links and the most notorious adservers.  It will shuffle the URLs that exist so the list is constantly rotating.
+
 If you want to use your own list of URLs in a different location, the file location should be the first (and only) argument.
 
 Depends upon/uses (most of these are GNU coreutils):

@@ -95,14 +95,19 @@ saurian_url() {
 
 	numurls=$(wc -l < "$TempDir/RawUrls")
 	echo "There were $numurls gotten from that link..."
+	
+	# This needs to be optimized and cut down; sorting a 30 MB list of urls
+	# is just insane
 	sort $TempDir/RawUrls | uniq > $TempDir/BigUrls.merged
 	sort $ListOfUrls | uniq >> $TempDir/BigUrls.merged
-	sort $TempDir/BigUrls.merged | uniq > $TempDir/BigUrls.sorted
-	cat $TempDir/BigUrls.sorted > $ListOfUrls
+	sort $TempDir/BigUrls.merged | awk '/^http:/'  | awk 'length($0) < 120' | grep -v -e "twitter" -e ".facebook" -e "doubleclick" -e "adserver" | uniq | shuf > $TempDir/BigUrls.sorted
+	head -n 10000 $TempDir/BigUrls.sorted > $ListOfUrls
+
+
 	# cleaning up after ourselves
-#	rm $TempDir/RawUrls
-#	rm $TempDir/BigUrls.sorted
-#	rm $TempDir/BigUrls.merged
+	rm $TempDir/RawUrls
+	rm $TempDir/BigUrls.sorted
+	rm $TempDir/BigUrls.merged
 
 }
 
